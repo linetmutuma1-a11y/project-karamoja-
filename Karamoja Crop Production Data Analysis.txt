@@ -1,0 +1,261 @@
+Karamoja Crop Production Data Analysis
+📌 Project Overview
+
+This project analyzes maize and sorghum production in the Karamoja region of Uganda at both district and subcounty levels. The analysis explores production patterns, population influence, land use efficiency, and yield distribution using Python data science tools.
+
+The workflow includes:
+
+Extracting datasets
+
+Cleaning and transforming data
+
+Merging datasets
+
+Feature engineering
+
+Data visualization
+
+Exporting processed data
+
+🗂️ Project Structure
+DATA/
+│── SHAPEFILES/
+│   ├── Uganda_Districts.shp
+│   ├── Uganda_Subcounties.shp
+│   ├── Crop_Type_Map_Maize.shp
+│   └── Crop_Type_Map_Sorghum.shp
+│
+│── Uganda_Karamoja_District_Crop_Yield_Population.csv
+│── Uganda_Karamoja_Subcounty_Crop_Yield_Population.csv
+│
+│── karamoja_df.csv
+│── analysis.ipynb
+│── README.md
+
+⚙️ Requirements
+
+Install the following Python libraries before running the project:
+
+pip install numpy pandas matplotlib seaborn geopandas pyshp
+
+Libraries Used
+
+numpy
+
+pandas
+
+matplotlib
+
+seaborn
+
+geopandas
+
+shapefile (pyshp)
+
+zipfile
+
+os
+
+📦 Data Extraction
+
+The dataset is provided in a ZIP file and extracted using:
+
+from zipfile import ZipFile
+
+
+Files are extracted into the DATA directory for easier access.
+
+🗺️ Shapefile Processing
+
+Shapefiles are read using a custom function:
+
+def read_shp(file_path):
+
+
+This converts shapefile attributes into Pandas DataFrames for easier analysis.
+
+Shapefiles used:
+
+Uganda Districts
+
+Uganda Subcounties
+
+Maize Crop Map
+
+Sorghum Crop Map
+
+📥 Loading the Dataset
+
+Two main CSV files are loaded:
+
+district_df = pd.read_csv('Uganda_Karamoja_District_Crop_Yield_Population.csv')
+subcounty_df = pd.read_csv('Uganda_Karamoja_Subcounty_Crop_Yield_Population.csv')
+
+
+These contain population, crop area, yield, and production data.
+
+🔍 Data Exploration
+
+Initial exploration includes:
+
+Dataset structure:
+
+df.info()
+
+
+Previewing data:
+
+df.head()
+
+
+Dataset shape
+
+District and subcounty counts
+
+Missing value checks
+
+No missing values were found in the datasets.
+
+🧹 Data Cleaning & Preparation
+1. Creating Copies
+
+To preserve original data:
+
+dist_df = district_df.copy()
+sub_cty_df = subcounty_df.copy()
+
+2. Renaming Columns
+
+Columns are renamed for clarity:
+
+Example:
+
+'NAME' → 'District'
+'POP' → 'Population'
+
+3. Formatting Text
+
+District and subcounty names are converted to title case for consistency.
+
+🔗 Data Integration
+
+The district and subcounty datasets are merged using:
+
+pd.merge()
+
+
+The common column used is:
+
+District
+
+
+This creates a combined dataset named:
+
+karamoja_df
+
+🧮 Feature Engineering
+
+New analytical features are created:
+
+1. Productivity Per Capita
+Total Production ÷ Population
+
+2. Population Density
+Area ÷ Population
+
+3. Land Use Efficiency
+(Crop Area ÷ Total Area) × 100
+
+
+These features help evaluate agricultural performance and land utilization.
+
+📊 Data Analysis & Visualization
+1. Stacked Bar Chart
+
+Shows maize vs sorghum production by district.
+
+Purpose:
+
+Compare total production
+
+Identify high/low producing districts
+
+2. Histograms
+
+Displays yield distribution for:
+
+Maize
+
+Sorghum
+
+Helps understand productivity patterns at subcounty level.
+
+3. Correlation Heatmap
+
+Shows relationships between:
+
+Yield
+
+Crop area
+
+Population
+
+Used to analyze dependencies between variables.
+
+📈 Key Findings
+Production
+
+Maize production is higher than sorghum across most districts.
+
+Kotido shows relatively high sorghum production.
+
+Moroto has low production for both crops.
+
+Yield Distribution
+
+Maize yields show slight negative skew.
+
+Sorghum yields show slight positive skew.
+
+Correlation
+
+Maize and sorghum yields are positively correlated.
+
+Crop area has weak correlation with yield.
+
+Productivity depends more on environmental and management factors.
+
+💾 Exporting Results
+
+The cleaned dataset is saved for future use:
+
+karamoja_df.to_csv('karamoja_df.csv', index=False)
+
+
+This file contains merged and engineered features.
+
+▶️ How to Run the Project
+
+Clone or download the repository
+
+Install required libraries
+
+Extract the ZIP file
+
+Open the Jupyter Notebook
+
+Run cells in sequence
+
+View visualizations and exported CSV
+
+📌 Future Improvements
+
+Add rainfall and climate data
+
+Perform time-series analysis
+
+Integrate GIS visualizations
+
+Build predictive models
+
+Create interactive dashboards
