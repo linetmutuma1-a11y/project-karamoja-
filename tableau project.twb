@@ -1,0 +1,1405 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20253.26.0109.0333                               -->
+<workbook original-version='18.1' source-build='2025.3.2 (20253.26.0109.0333)' source-platform='win' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <AnimationOnByDefault />
+    <MarkAnimation />
+    <ObjectModelEncapsulateLegacy />
+    <ObjectModelExtractV2 />
+    <ObjectModelTableType />
+    <SchemaViewerObjectModel />
+    <SheetIdentifierTracking />
+    <SpatialFileLayer />
+    <_.fcp.VConnDownstreamExtractsWithWarnings.true...VConnDownstreamExtractsWithWarnings />
+    <WindowsPersistSimpleIdentifiers />
+  </document-format-change-manifest>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <datasources>
+    <datasource caption='karamoja_df.csv+ (Multiple Connections)' inline='true' name='federated.19mzx3f1uvu6yj130xfbe0nr5vxq' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='karamoja_df' name='textscan.0qc177g0opv51c11ybsn513yr9st'>
+            <connection class='textscan' directory='C:/Users/HP/Desktop/DATA' filename='karamoja_df.csv' password='' server='' />
+          </named-connection>
+          <named-connection caption='Uganda_Districts' name='ogrdirect.03amzn0052ru4s1fpkfzl1wtpfg3'>
+            <connection class='ogrdirect' directory='C:/Users/HP/Desktop/DATA/DATA/SHAPEFILES' filename='Uganda_Districts.shp' password='' server='' tablename='' />
+          </named-connection>
+        </named-connections>
+        <relation type='collection'>
+          <relation join='left' type='join'>
+            <clause type='join'>
+              <expression op='='>
+                <expression op='[karamoja_df.csv].[District]' />
+                <expression op='[Uganda_Districts.shp].[DNAME2014]' />
+              </expression>
+            </clause>
+            <relation connection='textscan.0qc177g0opv51c11ybsn513yr9st' name='karamoja_df.csv' table='[karamoja_df#csv]' type='table'>
+              <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+                <column datatype='integer' name='Object_id' ordinal='0' />
+                <column datatype='string' name='Subcounty' ordinal='1' />
+                <column datatype='string' name='District' ordinal='2' />
+                <column datatype='integer' name='Population' ordinal='3' />
+                <column datatype='integer' name='Area' ordinal='4' />
+                <column datatype='string' name='Karamoja' ordinal='5' />
+                <column datatype='real' name='S_Yield_Ha' ordinal='6' />
+                <column datatype='real' name='M_Yield_Ha' ordinal='7' />
+                <column datatype='real' name='Crop_Area_Ha' ordinal='8' />
+                <column datatype='real' name='S_Area_Ha' ordinal='9' />
+                <column datatype='real' name='M_Area_Ha' ordinal='10' />
+                <column datatype='real' name='S_Prod_Tot_S' ordinal='11' />
+                <column datatype='real' name='M_Prod_Tot_S' ordinal='12' />
+                <column datatype='integer' name='S_Prod_Tot_D' ordinal='13' />
+                <column datatype='integer' name='M_Prod_Tot_D' ordinal='14' />
+                <column datatype='real' name='Prod_Per_Capita' ordinal='15' />
+                <column datatype='real' name='Pop_Density' ordinal='16' />
+                <column datatype='real' name='Land_use_efficiency' ordinal='17' />
+              </columns>
+            </relation>
+            <relation connection='ogrdirect.03amzn0052ru4s1fpkfzl1wtpfg3' name='Uganda_Districts.shp' table='[Uganda_Districts.shp]' type='table'>
+              <columns>
+                <column datatype='integer' name='OBJECTID' ordinal='0' />
+                <column datatype='string' name='DNAME2014' ordinal='1' />
+                <column datatype='spatial' name='Geometry' ordinal='2' />
+              </columns>
+            </relation>
+          </relation>
+          <relation join='left' type='join'>
+            <clause type='join'>
+              <expression op='Intersects'>
+                <expression op='[Uganda_Subcounties.shp].[Geometry]' />
+                <expression op='[Crop_Type_Map_Maize.shp].[Geometry]' />
+              </expression>
+            </clause>
+            <relation connection='ogrdirect.03amzn0052ru4s1fpkfzl1wtpfg3' name='Uganda_Subcounties.shp' table='[Uganda_Subcounties.shp]' type='table'>
+              <columns>
+                <column datatype='integer' name='OBJECTID' ordinal='0' />
+                <column datatype='string' name='SNAME2014' ordinal='1' />
+                <column datatype='spatial' name='Geometry' ordinal='2' />
+              </columns>
+            </relation>
+            <relation connection='ogrdirect.03amzn0052ru4s1fpkfzl1wtpfg3' name='Crop_Type_Map_Maize.shp' table='[Crop_Type_Map_Maize.shp]' type='table'>
+              <columns>
+                <column datatype='integer' name='DN' ordinal='0' />
+                <column datatype='spatial' name='Geometry' ordinal='1' />
+              </columns>
+            </relation>
+          </relation>
+        </relation>
+        <cols>
+          <map key='[Area]' value='[karamoja_df.csv].[Area]' />
+          <map key='[Crop_Area_Ha]' value='[karamoja_df.csv].[Crop_Area_Ha]' />
+          <map key='[DNAME2014]' value='[Uganda_Districts.shp].[DNAME2014]' />
+          <map key='[DN]' value='[Crop_Type_Map_Maize.shp].[DN]' />
+          <map key='[District]' value='[karamoja_df.csv].[District]' />
+          <map key='[Geometry (Crop_Type_Map_Maize.shp)]' value='[Crop_Type_Map_Maize.shp].[Geometry]' />
+          <map key='[Geometry (Uganda_Subcounties.shp)]' value='[Uganda_Subcounties.shp].[Geometry]' />
+          <map key='[Geometry]' value='[Uganda_Districts.shp].[Geometry]' />
+          <map key='[Karamoja]' value='[karamoja_df.csv].[Karamoja]' />
+          <map key='[Land_use_efficiency]' value='[karamoja_df.csv].[Land_use_efficiency]' />
+          <map key='[M_Area_Ha]' value='[karamoja_df.csv].[M_Area_Ha]' />
+          <map key='[M_Prod_Tot_D]' value='[karamoja_df.csv].[M_Prod_Tot_D]' />
+          <map key='[M_Prod_Tot_S]' value='[karamoja_df.csv].[M_Prod_Tot_S]' />
+          <map key='[M_Yield_Ha]' value='[karamoja_df.csv].[M_Yield_Ha]' />
+          <map key='[OBJECTID (Uganda_Subcounties.shp)]' value='[Uganda_Subcounties.shp].[OBJECTID]' />
+          <map key='[OBJECTID]' value='[Uganda_Districts.shp].[OBJECTID]' />
+          <map key='[Object_id]' value='[karamoja_df.csv].[Object_id]' />
+          <map key='[Pop_Density]' value='[karamoja_df.csv].[Pop_Density]' />
+          <map key='[Population]' value='[karamoja_df.csv].[Population]' />
+          <map key='[Prod_Per_Capita]' value='[karamoja_df.csv].[Prod_Per_Capita]' />
+          <map key='[SNAME2014]' value='[Uganda_Subcounties.shp].[SNAME2014]' />
+          <map key='[S_Area_Ha]' value='[karamoja_df.csv].[S_Area_Ha]' />
+          <map key='[S_Prod_Tot_D]' value='[karamoja_df.csv].[S_Prod_Tot_D]' />
+          <map key='[S_Prod_Tot_S]' value='[karamoja_df.csv].[S_Prod_Tot_S]' />
+          <map key='[S_Yield_Ha]' value='[karamoja_df.csv].[S_Yield_Ha]' />
+          <map key='[Subcounty]' value='[karamoja_df.csv].[Subcounty]' />
+        </cols>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[karamoja_df.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Object_id</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Object_id]</local-name>
+            <parent-name>[karamoja_df.csv]</parent-name>
+            <remote-alias>Object_id</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[karamoja_df.csv_AE9F25C8FDCC43ECBF5EB8199D9EB9AD]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Subcounty</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Subcounty]</local-name>
+            <parent-name>[karamoja_df.csv]</parent-name>
+            <remote-alias>Subcounty</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[karamoja_df.csv_AE9F25C8FDCC43ECBF5EB8199D9EB9AD]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>District</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[District]</local-name>
+            <parent-name>[karamoja_df.csv]</parent-name>
+            <remote-alias>District</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[karamoja_df.csv_AE9F25C8FDCC43ECBF5EB8199D9EB9AD]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Population</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Population]</local-name>
+            <parent-name>[karamoja_df.csv]</parent-name>
+            <remote-alias>Population</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[karamoja_df.csv_AE9F25C8FDCC43ECBF5EB8199D9EB9AD]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Area</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Area]</local-name>
+            <parent-name>[karamoja_df.csv]</parent-name>
+            <remote-alias>Area</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[karamoja_df.csv_AE9F25C8FDCC43ECBF5EB8199D9EB9AD]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Karamoja</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Karamoja]</local-name>
+            <parent-name>[karamoja_df.csv]</parent-name>
+            <remote-alias>Karamoja</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[karamoja_df.csv_AE9F25C8FDCC43ECBF5EB8199D9EB9AD]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>S_Yield_Ha</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[S_Yield_Ha]</local-name>
+            <parent-name>[karamoja_df.csv]</parent-name>
+            <remote-alias>S_Yield_Ha</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[karamoja_df.csv_AE9F25C8FDCC43ECBF5EB8199D9EB9AD]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>M_Yield_Ha</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[M_Yield_Ha]</local-name>
+            <parent-name>[karamoja_df.csv]</parent-name>
+            <remote-alias>M_Yield_Ha</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[karamoja_df.csv_AE9F25C8FDCC43ECBF5EB8199D9EB9AD]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Crop_Area_Ha</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Crop_Area_Ha]</local-name>
+            <parent-name>[karamoja_df.csv]</parent-name>
+            <remote-alias>Crop_Area_Ha</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[karamoja_df.csv_AE9F25C8FDCC43ECBF5EB8199D9EB9AD]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>S_Area_Ha</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[S_Area_Ha]</local-name>
+            <parent-name>[karamoja_df.csv]</parent-name>
+            <remote-alias>S_Area_Ha</remote-alias>
+            <ordinal>9</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[karamoja_df.csv_AE9F25C8FDCC43ECBF5EB8199D9EB9AD]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>M_Area_Ha</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[M_Area_Ha]</local-name>
+            <parent-name>[karamoja_df.csv]</parent-name>
+            <remote-alias>M_Area_Ha</remote-alias>
+            <ordinal>10</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[karamoja_df.csv_AE9F25C8FDCC43ECBF5EB8199D9EB9AD]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>S_Prod_Tot_S</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[S_Prod_Tot_S]</local-name>
+            <parent-name>[karamoja_df.csv]</parent-name>
+            <remote-alias>S_Prod_Tot_S</remote-alias>
+            <ordinal>11</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[karamoja_df.csv_AE9F25C8FDCC43ECBF5EB8199D9EB9AD]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>M_Prod_Tot_S</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[M_Prod_Tot_S]</local-name>
+            <parent-name>[karamoja_df.csv]</parent-name>
+            <remote-alias>M_Prod_Tot_S</remote-alias>
+            <ordinal>12</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[karamoja_df.csv_AE9F25C8FDCC43ECBF5EB8199D9EB9AD]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>S_Prod_Tot_D</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[S_Prod_Tot_D]</local-name>
+            <parent-name>[karamoja_df.csv]</parent-name>
+            <remote-alias>S_Prod_Tot_D</remote-alias>
+            <ordinal>13</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[karamoja_df.csv_AE9F25C8FDCC43ECBF5EB8199D9EB9AD]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>M_Prod_Tot_D</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[M_Prod_Tot_D]</local-name>
+            <parent-name>[karamoja_df.csv]</parent-name>
+            <remote-alias>M_Prod_Tot_D</remote-alias>
+            <ordinal>14</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[karamoja_df.csv_AE9F25C8FDCC43ECBF5EB8199D9EB9AD]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Prod_Per_Capita</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Prod_Per_Capita]</local-name>
+            <parent-name>[karamoja_df.csv]</parent-name>
+            <remote-alias>Prod_Per_Capita</remote-alias>
+            <ordinal>15</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[karamoja_df.csv_AE9F25C8FDCC43ECBF5EB8199D9EB9AD]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Pop_Density</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Pop_Density]</local-name>
+            <parent-name>[karamoja_df.csv]</parent-name>
+            <remote-alias>Pop_Density</remote-alias>
+            <ordinal>16</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[karamoja_df.csv_AE9F25C8FDCC43ECBF5EB8199D9EB9AD]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Land_use_efficiency</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Land_use_efficiency]</local-name>
+            <parent-name>[karamoja_df.csv]</parent-name>
+            <remote-alias>Land_use_efficiency</remote-alias>
+            <ordinal>17</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[karamoja_df.csv_AE9F25C8FDCC43ECBF5EB8199D9EB9AD]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>OBJECTID</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[OBJECTID]</local-name>
+            <parent-name>[Uganda_Districts.shp]</parent-name>
+            <remote-alias>OBJECTID</remote-alias>
+            <ordinal>18</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[karamoja_df.csv_AE9F25C8FDCC43ECBF5EB8199D9EB9AD]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>DNAME2014</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[DNAME2014]</local-name>
+            <parent-name>[Uganda_Districts.shp]</parent-name>
+            <remote-alias>DNAME2014</remote-alias>
+            <ordinal>19</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <object-id>[karamoja_df.csv_AE9F25C8FDCC43ECBF5EB8199D9EB9AD]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Geometry</remote-name>
+            <remote-type>8</remote-type>
+            <local-name>[Geometry]</local-name>
+            <parent-name>[Uganda_Districts.shp]</parent-name>
+            <remote-alias>Geometry</remote-alias>
+            <ordinal>20</ordinal>
+            <local-type>spatial</local-type>
+            <aggregation>Collect</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[karamoja_df.csv_AE9F25C8FDCC43ECBF5EB8199D9EB9AD]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>OBJECTID</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[OBJECTID (Uganda_Subcounties.shp)]</local-name>
+            <parent-name>[Uganda_Subcounties.shp]</parent-name>
+            <remote-alias>OBJECTID</remote-alias>
+            <ordinal>21</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[Uganda_Subcounties.shp_325E1D542D284CC5BACFB0DF449B1D9F]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>SNAME2014</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[SNAME2014]</local-name>
+            <parent-name>[Uganda_Subcounties.shp]</parent-name>
+            <remote-alias>SNAME2014</remote-alias>
+            <ordinal>22</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <object-id>[Uganda_Subcounties.shp_325E1D542D284CC5BACFB0DF449B1D9F]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Geometry</remote-name>
+            <remote-type>8</remote-type>
+            <local-name>[Geometry (Uganda_Subcounties.shp)]</local-name>
+            <parent-name>[Uganda_Subcounties.shp]</parent-name>
+            <remote-alias>Geometry</remote-alias>
+            <ordinal>23</ordinal>
+            <local-type>spatial</local-type>
+            <aggregation>Collect</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[Uganda_Subcounties.shp_325E1D542D284CC5BACFB0DF449B1D9F]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>DN</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[DN]</local-name>
+            <parent-name>[Crop_Type_Map_Maize.shp]</parent-name>
+            <remote-alias>DN</remote-alias>
+            <ordinal>24</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[Uganda_Subcounties.shp_325E1D542D284CC5BACFB0DF449B1D9F]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Geometry</remote-name>
+            <remote-type>8</remote-type>
+            <local-name>[Geometry (Crop_Type_Map_Maize.shp)]</local-name>
+            <parent-name>[Crop_Type_Map_Maize.shp]</parent-name>
+            <remote-alias>Geometry</remote-alias>
+            <ordinal>25</ordinal>
+            <local-type>spatial</local-type>
+            <aggregation>Collect</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[Uganda_Subcounties.shp_325E1D542D284CC5BACFB0DF449B1D9F]</object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='Dist Pop' datatype='integer' name='[Calculation_0053642284990465]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='{FIXED [District]:sum([Population])}' />
+      </column>
+      <column caption='District Performance' datatype='string' name='[Calculation_0053642285326338]' role='measure' type='nominal'>
+        <calculation class='tableau' formula='IF [Calculation_0620715275128833]=&quot;Below Average&quot; AND MAX ([Calculation_0053642284990465])&gt; 5000 THEN &quot;High Priority&quot; ELSE &quot;Monitor&quot; End' />
+      </column>
+      <column caption='Total prod sub' datatype='real' name='[Calculation_0053642287247363]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='ZN([M_Prod_Tot_S]) + ZN([S_Prod_Tot_S])' />
+      </column>
+      <column caption='Yield avg ' datatype='real' name='[Calculation_0620715273342976]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='AVG([M_Yield_Ha]+ [S_Yield_Ha])' />
+      </column>
+      <column caption='Yield  Performance' datatype='string' name='[Calculation_0620715275128833]' role='measure' type='nominal'>
+        <calculation class='tableau' formula='IF [Calculation_0620715273342976] &gt;= 1500 THEN &apos;Above Average&apos; ELSEIF  [Calculation_0620715273342976] &gt; 1000 AND [Calculation_0620715273342976]&lt;1500 THEN &apos;Average&apos; ELSE &apos;Below Average&apos; END' />
+      </column>
+      <column caption='Crop Area Ha' datatype='real' name='[Crop_Area_Ha]' role='measure' type='quantitative' />
+      <column caption='Dname2014' datatype='string' name='[DNAME2014]' role='dimension' type='nominal' />
+      <column caption='Geometry (Crop Type Map Maize.shp)' datatype='spatial' name='[Geometry (Crop_Type_Map_Maize.shp)]' role='measure' type='nominal' />
+      <column caption='Geometry (Uganda Subcounties.shp)' datatype='spatial' name='[Geometry (Uganda_Subcounties.shp)]' role='measure' type='nominal' />
+      <column caption='Land use efficiency' datatype='real' name='[Land_use_efficiency]' role='measure' type='quantitative' />
+      <column caption='M Area Ha' datatype='real' name='[M_Area_Ha]' role='measure' type='quantitative' />
+      <column caption='M Prod Tot D' datatype='integer' name='[M_Prod_Tot_D]' role='measure' type='quantitative' />
+      <column caption='M Prod Tot S' datatype='real' name='[M_Prod_Tot_S]' role='measure' type='quantitative' />
+      <column caption='M Yield Ha' datatype='real' name='[M_Yield_Ha]' role='measure' type='quantitative' />
+      <column caption='OBJECTID (Uganda Subcounties.shp)' datatype='integer' name='[OBJECTID (Uganda_Subcounties.shp)]' role='measure' type='quantitative' />
+      <column caption='Objectid' datatype='integer' name='[OBJECTID]' role='measure' type='quantitative' />
+      <column caption='Object id' datatype='integer' name='[Object_id]' role='dimension' type='ordinal' />
+      <column caption='Pop Density' datatype='real' name='[Pop_Density]' role='measure' type='quantitative' />
+      <column caption='Prod Per Capita' datatype='real' name='[Prod_Per_Capita]' role='measure' type='quantitative' />
+      <column caption='Sname2014' datatype='string' name='[SNAME2014]' role='dimension' type='nominal' />
+      <column caption='S Area Ha' datatype='real' name='[S_Area_Ha]' role='measure' type='quantitative' />
+      <column caption='S Prod Tot D' datatype='integer' name='[S_Prod_Tot_D]' role='measure' type='quantitative' />
+      <column caption='S Prod Tot S' datatype='real' name='[S_Prod_Tot_S]' role='measure' type='quantitative' />
+      <column caption='S Yield Ha' datatype='real' name='[S_Yield_Ha]' role='measure' type='quantitative' />
+      <column datatype='string' name='[Subcounty]' role='dimension' semantic-role='[County].[Name]' type='nominal' />
+      <column caption='Uganda_Subcounties.shp' datatype='table' name='[__tableau_internal_object_id__].[Uganda_Subcounties.shp_325E1D542D284CC5BACFB0DF449B1D9F]' role='measure' type='quantitative' />
+      <column caption='karamoja_df.csv' datatype='table' name='[__tableau_internal_object_id__].[karamoja_df.csv_AE9F25C8FDCC43ECBF5EB8199D9EB9AD]' role='measure' type='quantitative' />
+      <column-instance column='[M_Prod_Tot_D]' derivation='Sum' name='[sum:M_Prod_Tot_D:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[M_Yield_Ha]' derivation='Sum' name='[sum:M_Yield_Ha:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[S_Prod_Tot_D]' derivation='Sum' name='[sum:S_Prod_Tot_D:qk]' pivot='key' type='quantitative' />
+      <extract _.fcp.VConnDownstreamExtractsWithWarnings.true...user-specific='false' count='-1' enabled='true' object-id='' units='records'>
+        <connection access_mode='readonly' author-locale='en_US' class='hyper' dbname='C:/Users/HP/AppData/Local/Temp/TableauTemp/#TableauTemp_0venl4v1f7a5da15ox5jx1e12gga.hyper' default-settings='hyper' schema='Extract' sslmode='' tablename='Extract' update-time='02/21/2026 02:10:39 AM' username='tableau_internal_user'>
+          <relation type='collection'>
+            <relation name='karamoja_df.csv_AE9F25C8FDCC43ECBF5EB8199D9EB9AD' table='[Extract].[karamoja_df.csv_AE9F25C8FDCC43ECBF5EB8199D9EB9AD]' type='table' />
+            <relation name='Uganda_Subcounties.shp_325E1D542D284CC5BACFB0DF449B1D9F' table='[Extract].[Uganda_Subcounties.shp_325E1D542D284CC5BACFB0DF449B1D9F]' type='table' />
+          </relation>
+          <cols>
+            <map key='[Area]' value='[karamoja_df.csv_AE9F25C8FDCC43ECBF5EB8199D9EB9AD].[Area]' />
+            <map key='[Crop_Area_Ha]' value='[karamoja_df.csv_AE9F25C8FDCC43ECBF5EB8199D9EB9AD].[Crop_Area_Ha]' />
+            <map key='[DNAME2014]' value='[karamoja_df.csv_AE9F25C8FDCC43ECBF5EB8199D9EB9AD].[DNAME2014]' />
+            <map key='[DN]' value='[Uganda_Subcounties.shp_325E1D542D284CC5BACFB0DF449B1D9F].[DN]' />
+            <map key='[District]' value='[karamoja_df.csv_AE9F25C8FDCC43ECBF5EB8199D9EB9AD].[District]' />
+            <map key='[Geometry (Crop_Type_Map_Maize.shp)]' value='[Uganda_Subcounties.shp_325E1D542D284CC5BACFB0DF449B1D9F].[Geometry]' />
+            <map key='[Geometry (Uganda_Subcounties.shp)]' value='[Uganda_Subcounties.shp_325E1D542D284CC5BACFB0DF449B1D9F].[Geometry1]' />
+            <map key='[Geometry]' value='[karamoja_df.csv_AE9F25C8FDCC43ECBF5EB8199D9EB9AD].[Geometry]' />
+            <map key='[Karamoja]' value='[karamoja_df.csv_AE9F25C8FDCC43ECBF5EB8199D9EB9AD].[Karamoja]' />
+            <map key='[Land_use_efficiency]' value='[karamoja_df.csv_AE9F25C8FDCC43ECBF5EB8199D9EB9AD].[Land_use_efficiency]' />
+            <map key='[M_Area_Ha]' value='[karamoja_df.csv_AE9F25C8FDCC43ECBF5EB8199D9EB9AD].[M_Area_Ha]' />
+            <map key='[M_Prod_Tot_D]' value='[karamoja_df.csv_AE9F25C8FDCC43ECBF5EB8199D9EB9AD].[M_Prod_Tot_D]' />
+            <map key='[M_Prod_Tot_S]' value='[karamoja_df.csv_AE9F25C8FDCC43ECBF5EB8199D9EB9AD].[M_Prod_Tot_S]' />
+            <map key='[M_Yield_Ha]' value='[karamoja_df.csv_AE9F25C8FDCC43ECBF5EB8199D9EB9AD].[M_Yield_Ha]' />
+            <map key='[OBJECTID (Uganda_Subcounties.shp)]' value='[Uganda_Subcounties.shp_325E1D542D284CC5BACFB0DF449B1D9F].[OBJECTID]' />
+            <map key='[OBJECTID]' value='[karamoja_df.csv_AE9F25C8FDCC43ECBF5EB8199D9EB9AD].[OBJECTID]' />
+            <map key='[Object_id]' value='[karamoja_df.csv_AE9F25C8FDCC43ECBF5EB8199D9EB9AD].[Object_id]' />
+            <map key='[Pop_Density]' value='[karamoja_df.csv_AE9F25C8FDCC43ECBF5EB8199D9EB9AD].[Pop_Density]' />
+            <map key='[Population]' value='[karamoja_df.csv_AE9F25C8FDCC43ECBF5EB8199D9EB9AD].[Population]' />
+            <map key='[Prod_Per_Capita]' value='[karamoja_df.csv_AE9F25C8FDCC43ECBF5EB8199D9EB9AD].[Prod_Per_Capita]' />
+            <map key='[SNAME2014]' value='[Uganda_Subcounties.shp_325E1D542D284CC5BACFB0DF449B1D9F].[SNAME2014]' />
+            <map key='[S_Area_Ha]' value='[karamoja_df.csv_AE9F25C8FDCC43ECBF5EB8199D9EB9AD].[S_Area_Ha]' />
+            <map key='[S_Prod_Tot_D]' value='[karamoja_df.csv_AE9F25C8FDCC43ECBF5EB8199D9EB9AD].[S_Prod_Tot_D]' />
+            <map key='[S_Prod_Tot_S]' value='[karamoja_df.csv_AE9F25C8FDCC43ECBF5EB8199D9EB9AD].[S_Prod_Tot_S]' />
+            <map key='[S_Yield_Ha]' value='[karamoja_df.csv_AE9F25C8FDCC43ECBF5EB8199D9EB9AD].[S_Yield_Ha]' />
+            <map key='[Subcounty]' value='[karamoja_df.csv_AE9F25C8FDCC43ECBF5EB8199D9EB9AD].[Subcounty]' />
+          </cols>
+          <metadata-records>
+            <metadata-record class='column'>
+              <remote-name>Object_id</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[Object_id]</local-name>
+              <parent-name>[karamoja_df.csv_AE9F25C8FDCC43ECBF5EB8199D9EB9AD]</parent-name>
+              <remote-alias>Object_id</remote-alias>
+              <ordinal>0</ordinal>
+              <family>karamoja_df.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>52</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[karamoja_df.csv_AE9F25C8FDCC43ECBF5EB8199D9EB9AD]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Subcounty</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[Subcounty]</local-name>
+              <parent-name>[karamoja_df.csv_AE9F25C8FDCC43ECBF5EB8199D9EB9AD]</parent-name>
+              <remote-alias>Subcounty</remote-alias>
+              <ordinal>1</ordinal>
+              <family>karamoja_df.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>52</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <object-id>[karamoja_df.csv_AE9F25C8FDCC43ECBF5EB8199D9EB9AD]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>District</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[District]</local-name>
+              <parent-name>[karamoja_df.csv_AE9F25C8FDCC43ECBF5EB8199D9EB9AD]</parent-name>
+              <remote-alias>District</remote-alias>
+              <ordinal>2</ordinal>
+              <family>karamoja_df.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>7</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <object-id>[karamoja_df.csv_AE9F25C8FDCC43ECBF5EB8199D9EB9AD]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Population</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[Population]</local-name>
+              <parent-name>[karamoja_df.csv_AE9F25C8FDCC43ECBF5EB8199D9EB9AD]</parent-name>
+              <remote-alias>Population</remote-alias>
+              <ordinal>3</ordinal>
+              <family>karamoja_df.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>52</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[karamoja_df.csv_AE9F25C8FDCC43ECBF5EB8199D9EB9AD]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Area</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[Area]</local-name>
+              <parent-name>[karamoja_df.csv_AE9F25C8FDCC43ECBF5EB8199D9EB9AD]</parent-name>
+              <remote-alias>Area</remote-alias>
+              <ordinal>4</ordinal>
+              <family>karamoja_df.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>52</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[karamoja_df.csv_AE9F25C8FDCC43ECBF5EB8199D9EB9AD]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Karamoja</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[Karamoja]</local-name>
+              <parent-name>[karamoja_df.csv_AE9F25C8FDCC43ECBF5EB8199D9EB9AD]</parent-name>
+              <remote-alias>Karamoja</remote-alias>
+              <ordinal>5</ordinal>
+              <family>karamoja_df.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>1</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <object-id>[karamoja_df.csv_AE9F25C8FDCC43ECBF5EB8199D9EB9AD]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>S_Yield_Ha</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[S_Yield_Ha]</local-name>
+              <parent-name>[karamoja_df.csv_AE9F25C8FDCC43ECBF5EB8199D9EB9AD]</parent-name>
+              <remote-alias>S_Yield_Ha</remote-alias>
+              <ordinal>6</ordinal>
+              <family>karamoja_df.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>52</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[karamoja_df.csv_AE9F25C8FDCC43ECBF5EB8199D9EB9AD]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>M_Yield_Ha</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[M_Yield_Ha]</local-name>
+              <parent-name>[karamoja_df.csv_AE9F25C8FDCC43ECBF5EB8199D9EB9AD]</parent-name>
+              <remote-alias>M_Yield_Ha</remote-alias>
+              <ordinal>7</ordinal>
+              <family>karamoja_df.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>52</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[karamoja_df.csv_AE9F25C8FDCC43ECBF5EB8199D9EB9AD]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Crop_Area_Ha</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[Crop_Area_Ha]</local-name>
+              <parent-name>[karamoja_df.csv_AE9F25C8FDCC43ECBF5EB8199D9EB9AD]</parent-name>
+              <remote-alias>Crop_Area_Ha</remote-alias>
+              <ordinal>8</ordinal>
+              <family>karamoja_df.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>52</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[karamoja_df.csv_AE9F25C8FDCC43ECBF5EB8199D9EB9AD]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>S_Area_Ha</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[S_Area_Ha]</local-name>
+              <parent-name>[karamoja_df.csv_AE9F25C8FDCC43ECBF5EB8199D9EB9AD]</parent-name>
+              <remote-alias>S_Area_Ha</remote-alias>
+              <ordinal>9</ordinal>
+              <family>karamoja_df.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>52</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[karamoja_df.csv_AE9F25C8FDCC43ECBF5EB8199D9EB9AD]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>M_Area_Ha</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[M_Area_Ha]</local-name>
+              <parent-name>[karamoja_df.csv_AE9F25C8FDCC43ECBF5EB8199D9EB9AD]</parent-name>
+              <remote-alias>M_Area_Ha</remote-alias>
+              <ordinal>10</ordinal>
+              <family>karamoja_df.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>52</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[karamoja_df.csv_AE9F25C8FDCC43ECBF5EB8199D9EB9AD]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>S_Prod_Tot_S</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[S_Prod_Tot_S]</local-name>
+              <parent-name>[karamoja_df.csv_AE9F25C8FDCC43ECBF5EB8199D9EB9AD]</parent-name>
+              <remote-alias>S_Prod_Tot_S</remote-alias>
+              <ordinal>11</ordinal>
+              <family>karamoja_df.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>52</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[karamoja_df.csv_AE9F25C8FDCC43ECBF5EB8199D9EB9AD]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>M_Prod_Tot_S</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[M_Prod_Tot_S]</local-name>
+              <parent-name>[karamoja_df.csv_AE9F25C8FDCC43ECBF5EB8199D9EB9AD]</parent-name>
+              <remote-alias>M_Prod_Tot_S</remote-alias>
+              <ordinal>12</ordinal>
+              <family>karamoja_df.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>52</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[karamoja_df.csv_AE9F25C8FDCC43ECBF5EB8199D9EB9AD]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>S_Prod_Tot_D</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[S_Prod_Tot_D]</local-name>
+              <parent-name>[karamoja_df.csv_AE9F25C8FDCC43ECBF5EB8199D9EB9AD]</parent-name>
+              <remote-alias>S_Prod_Tot_D</remote-alias>
+              <ordinal>13</ordinal>
+              <family>karamoja_df.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>7</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[karamoja_df.csv_AE9F25C8FDCC43ECBF5EB8199D9EB9AD]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>M_Prod_Tot_D</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[M_Prod_Tot_D]</local-name>
+              <parent-name>[karamoja_df.csv_AE9F25C8FDCC43ECBF5EB8199D9EB9AD]</parent-name>
+              <remote-alias>M_Prod_Tot_D</remote-alias>
+              <ordinal>14</ordinal>
+              <family>karamoja_df.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>7</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[karamoja_df.csv_AE9F25C8FDCC43ECBF5EB8199D9EB9AD]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Prod_Per_Capita</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[Prod_Per_Capita]</local-name>
+              <parent-name>[karamoja_df.csv_AE9F25C8FDCC43ECBF5EB8199D9EB9AD]</parent-name>
+              <remote-alias>Prod_Per_Capita</remote-alias>
+              <ordinal>15</ordinal>
+              <family>karamoja_df.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>52</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[karamoja_df.csv_AE9F25C8FDCC43ECBF5EB8199D9EB9AD]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Pop_Density</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[Pop_Density]</local-name>
+              <parent-name>[karamoja_df.csv_AE9F25C8FDCC43ECBF5EB8199D9EB9AD]</parent-name>
+              <remote-alias>Pop_Density</remote-alias>
+              <ordinal>16</ordinal>
+              <family>karamoja_df.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>52</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[karamoja_df.csv_AE9F25C8FDCC43ECBF5EB8199D9EB9AD]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Land_use_efficiency</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[Land_use_efficiency]</local-name>
+              <parent-name>[karamoja_df.csv_AE9F25C8FDCC43ECBF5EB8199D9EB9AD]</parent-name>
+              <remote-alias>Land_use_efficiency</remote-alias>
+              <ordinal>17</ordinal>
+              <family>karamoja_df.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>52</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[karamoja_df.csv_AE9F25C8FDCC43ECBF5EB8199D9EB9AD]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>OBJECTID</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[OBJECTID]</local-name>
+              <parent-name>[karamoja_df.csv_AE9F25C8FDCC43ECBF5EB8199D9EB9AD]</parent-name>
+              <remote-alias>OBJECTID</remote-alias>
+              <ordinal>18</ordinal>
+              <family>Uganda_Districts.shp</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>1</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[karamoja_df.csv_AE9F25C8FDCC43ECBF5EB8199D9EB9AD]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>DNAME2014</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[DNAME2014]</local-name>
+              <parent-name>[karamoja_df.csv_AE9F25C8FDCC43ECBF5EB8199D9EB9AD]</parent-name>
+              <remote-alias>DNAME2014</remote-alias>
+              <ordinal>19</ordinal>
+              <family>Uganda_Districts.shp</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>1</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='binary' />
+              <object-id>[karamoja_df.csv_AE9F25C8FDCC43ECBF5EB8199D9EB9AD]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Geometry</remote-name>
+              <remote-type>128</remote-type>
+              <local-name>[Geometry]</local-name>
+              <parent-name>[karamoja_df.csv_AE9F25C8FDCC43ECBF5EB8199D9EB9AD]</parent-name>
+              <remote-alias>Geometry</remote-alias>
+              <ordinal>20</ordinal>
+              <family>Uganda_Districts.shp</family>
+              <local-type>spatial</local-type>
+              <aggregation>Collect</aggregation>
+              <approx-count>1</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[karamoja_df.csv_AE9F25C8FDCC43ECBF5EB8199D9EB9AD]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>OBJECTID</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[OBJECTID (Uganda_Subcounties.shp)]</local-name>
+              <parent-name>[Uganda_Subcounties.shp_325E1D542D284CC5BACFB0DF449B1D9F]</parent-name>
+              <remote-alias>OBJECTID</remote-alias>
+              <ordinal>21</ordinal>
+              <family>Uganda_Subcounties.shp</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>301</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[Uganda_Subcounties.shp_325E1D542D284CC5BACFB0DF449B1D9F]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>SNAME2014</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[SNAME2014]</local-name>
+              <parent-name>[Uganda_Subcounties.shp_325E1D542D284CC5BACFB0DF449B1D9F]</parent-name>
+              <remote-alias>SNAME2014</remote-alias>
+              <ordinal>22</ordinal>
+              <family>Uganda_Subcounties.shp</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>301</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='binary' />
+              <object-id>[Uganda_Subcounties.shp_325E1D542D284CC5BACFB0DF449B1D9F]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Geometry1</remote-name>
+              <remote-type>128</remote-type>
+              <local-name>[Geometry (Uganda_Subcounties.shp)]</local-name>
+              <parent-name>[Uganda_Subcounties.shp_325E1D542D284CC5BACFB0DF449B1D9F]</parent-name>
+              <remote-alias>Geometry1</remote-alias>
+              <ordinal>23</ordinal>
+              <family>Uganda_Subcounties.shp</family>
+              <local-type>spatial</local-type>
+              <aggregation>Collect</aggregation>
+              <approx-count>301</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[Uganda_Subcounties.shp_325E1D542D284CC5BACFB0DF449B1D9F]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>DN</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[DN]</local-name>
+              <parent-name>[Uganda_Subcounties.shp_325E1D542D284CC5BACFB0DF449B1D9F]</parent-name>
+              <remote-alias>DN</remote-alias>
+              <ordinal>24</ordinal>
+              <family>Crop_Type_Map_Maize.shp</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>2</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[Uganda_Subcounties.shp_325E1D542D284CC5BACFB0DF449B1D9F]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Geometry</remote-name>
+              <remote-type>128</remote-type>
+              <local-name>[Geometry (Crop_Type_Map_Maize.shp)]</local-name>
+              <parent-name>[Uganda_Subcounties.shp_325E1D542D284CC5BACFB0DF449B1D9F]</parent-name>
+              <remote-alias>Geometry</remote-alias>
+              <ordinal>25</ordinal>
+              <family>Crop_Type_Map_Maize.shp</family>
+              <local-type>spatial</local-type>
+              <aggregation>Collect</aggregation>
+              <approx-count>28041</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[Uganda_Subcounties.shp_325E1D542D284CC5BACFB0DF449B1D9F]</object-id>
+            </metadata-record>
+          </metadata-records>
+        </connection>
+      </extract>
+      <layout dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <style>
+        <style-rule element='mark'>
+          <encoding attr='color' field='[:Measure Names]' type='palette'>
+            <map to='#4e79a7'>
+              <bucket>&quot;[federated.19mzx3f1uvu6yj130xfbe0nr5vxq].[sum:M_Prod_Tot_D:qk]&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;[federated.19mzx3f1uvu6yj130xfbe0nr5vxq].[sum:S_Prod_Tot_D:qk]&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;[federated.19mzx3f1uvu6yj130xfbe0nr5vxq].[sum:M_Yield_Ha:qk]&quot;</bucket>
+            </map>
+          </encoding>
+        </style-rule>
+      </style>
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
+      </semantic-values>
+      <object-graph>
+        <objects>
+          <object caption='Uganda_Subcounties.shp' id='Uganda_Subcounties.shp_325E1D542D284CC5BACFB0DF449B1D9F'>
+            <properties context=''>
+              <relation join='left' type='join'>
+                <clause type='join'>
+                  <expression op='Intersects'>
+                    <expression op='[Uganda_Subcounties.shp].[Geometry]' />
+                    <expression op='[Crop_Type_Map_Maize.shp].[Geometry]' />
+                  </expression>
+                </clause>
+                <relation connection='ogrdirect.03amzn0052ru4s1fpkfzl1wtpfg3' name='Uganda_Subcounties.shp' table='[Uganda_Subcounties.shp]' type='table'>
+                  <columns>
+                    <column datatype='integer' name='OBJECTID' ordinal='0' />
+                    <column datatype='string' name='SNAME2014' ordinal='1' />
+                    <column datatype='spatial' name='Geometry' ordinal='2' />
+                  </columns>
+                </relation>
+                <relation connection='ogrdirect.03amzn0052ru4s1fpkfzl1wtpfg3' name='Crop_Type_Map_Maize.shp' table='[Crop_Type_Map_Maize.shp]' type='table'>
+                  <columns>
+                    <column datatype='integer' name='DN' ordinal='0' />
+                    <column datatype='spatial' name='Geometry' ordinal='1' />
+                  </columns>
+                </relation>
+              </relation>
+            </properties>
+            <properties context='extract'>
+              <relation name='Uganda_Subcounties.shp_325E1D542D284CC5BACFB0DF449B1D9F' table='[Extract].[Uganda_Subcounties.shp_325E1D542D284CC5BACFB0DF449B1D9F]' type='table' />
+            </properties>
+          </object>
+          <object caption='karamoja_df.csv' id='karamoja_df.csv_AE9F25C8FDCC43ECBF5EB8199D9EB9AD'>
+            <properties context=''>
+              <relation join='left' type='join'>
+                <clause type='join'>
+                  <expression op='='>
+                    <expression op='[karamoja_df.csv].[District]' />
+                    <expression op='[Uganda_Districts.shp].[DNAME2014]' />
+                  </expression>
+                </clause>
+                <relation connection='textscan.0qc177g0opv51c11ybsn513yr9st' name='karamoja_df.csv' table='[karamoja_df#csv]' type='table'>
+                  <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+                    <column datatype='integer' name='Object_id' ordinal='0' />
+                    <column datatype='string' name='Subcounty' ordinal='1' />
+                    <column datatype='string' name='District' ordinal='2' />
+                    <column datatype='integer' name='Population' ordinal='3' />
+                    <column datatype='integer' name='Area' ordinal='4' />
+                    <column datatype='string' name='Karamoja' ordinal='5' />
+                    <column datatype='real' name='S_Yield_Ha' ordinal='6' />
+                    <column datatype='real' name='M_Yield_Ha' ordinal='7' />
+                    <column datatype='real' name='Crop_Area_Ha' ordinal='8' />
+                    <column datatype='real' name='S_Area_Ha' ordinal='9' />
+                    <column datatype='real' name='M_Area_Ha' ordinal='10' />
+                    <column datatype='real' name='S_Prod_Tot_S' ordinal='11' />
+                    <column datatype='real' name='M_Prod_Tot_S' ordinal='12' />
+                    <column datatype='integer' name='S_Prod_Tot_D' ordinal='13' />
+                    <column datatype='integer' name='M_Prod_Tot_D' ordinal='14' />
+                    <column datatype='real' name='Prod_Per_Capita' ordinal='15' />
+                    <column datatype='real' name='Pop_Density' ordinal='16' />
+                    <column datatype='real' name='Land_use_efficiency' ordinal='17' />
+                  </columns>
+                </relation>
+                <relation connection='ogrdirect.03amzn0052ru4s1fpkfzl1wtpfg3' name='Uganda_Districts.shp' table='[Uganda_Districts.shp]' type='table'>
+                  <columns>
+                    <column datatype='integer' name='OBJECTID' ordinal='0' />
+                    <column datatype='string' name='DNAME2014' ordinal='1' />
+                    <column datatype='spatial' name='Geometry' ordinal='2' />
+                  </columns>
+                </relation>
+              </relation>
+            </properties>
+            <properties context='extract'>
+              <relation name='karamoja_df.csv_AE9F25C8FDCC43ECBF5EB8199D9EB9AD' table='[Extract].[karamoja_df.csv_AE9F25C8FDCC43ECBF5EB8199D9EB9AD]' type='table' />
+            </properties>
+          </object>
+        </objects>
+        <relationships>
+          <relationship>
+            <expression op='='>
+              <expression op='[Subcounty]' />
+              <expression op='[SNAME2014]' />
+            </expression>
+            <first-end-point object-id='karamoja_df.csv_AE9F25C8FDCC43ECBF5EB8199D9EB9AD' />
+            <second-end-point object-id='Uganda_Subcounties.shp_325E1D542D284CC5BACFB0DF449B1D9F' />
+          </relationship>
+        </relationships>
+      </object-graph>
+    </datasource>
+  </datasources>
+  <worksheets>
+    <worksheet name='PERFORMING DISTRICTS'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='karamoja_df.csv+ (Multiple Connections)' name='federated.19mzx3f1uvu6yj130xfbe0nr5vxq' />
+          </datasources>
+          <datasource-dependencies datasource='federated.19mzx3f1uvu6yj130xfbe0nr5vxq'>
+            <column datatype='string' name='[District]' role='dimension' type='nominal' />
+            <column caption='M Prod Tot D' datatype='integer' name='[M_Prod_Tot_D]' role='measure' type='quantitative' />
+            <column caption='S Prod Tot D' datatype='integer' name='[S_Prod_Tot_D]' role='measure' type='quantitative' />
+            <column-instance column='[District]' derivation='None' name='[none:District:nk]' pivot='key' type='nominal' />
+            <column-instance column='[M_Prod_Tot_D]' derivation='Sum' name='[sum:M_Prod_Tot_D:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[S_Prod_Tot_D]' derivation='Sum' name='[sum:S_Prod_Tot_D:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.19mzx3f1uvu6yj130xfbe0nr5vxq].[:Measure Names]'>
+            <groupfilter function='union' user:op='manual'>
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.19mzx3f1uvu6yj130xfbe0nr5vxq].[sum:M_Prod_Tot_D:qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.19mzx3f1uvu6yj130xfbe0nr5vxq].[sum:S_Prod_Tot_D:qk]&quot;' />
+            </groupfilter>
+          </filter>
+          <slices>
+            <column>[federated.19mzx3f1uvu6yj130xfbe0nr5vxq].[:Measure Names]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.19mzx3f1uvu6yj130xfbe0nr5vxq].[:Measure Names]' />
+            </encodings>
+          </pane>
+        </panes>
+        <rows>[federated.19mzx3f1uvu6yj130xfbe0nr5vxq].[Multiple Values]</rows>
+        <cols>([federated.19mzx3f1uvu6yj130xfbe0nr5vxq].[none:District:nk] / [federated.19mzx3f1uvu6yj130xfbe0nr5vxq].[:Measure Names])</cols>
+      </table>
+      <simple-id uuid='{8AA4A32B-C1E1-4BF5-B254-7FE51DDA7222}' />
+    </worksheet>
+    <worksheet name='Sheet 2'>
+      <table>
+        <view>
+          <datasources />
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+      </table>
+      <simple-id uuid='{DD4394A8-FDC9-4C5E-92C1-DDE93549CF5A}' />
+    </worksheet>
+    <worksheet name='Sheet 3'>
+      <table>
+        <view>
+          <datasources />
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+      </table>
+      <simple-id uuid='{A6C7D3C1-CF02-49FE-A2E2-1FE594E70C80}' />
+    </worksheet>
+    <worksheet name='Sheet 4'>
+      <table>
+        <view>
+          <datasources />
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='false' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+      </table>
+      <simple-id uuid='{8178831A-88C0-43B0-A7AB-302449A67C02}' />
+    </worksheet>
+  </worksheets>
+  <windows source-height='30'>
+    <window class='worksheet' maximized='true' name='PERFORMING DISTRICTS'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+            <card type='measures' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.19mzx3f1uvu6yj130xfbe0nr5vxq].[:Measure Names]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.19mzx3f1uvu6yj130xfbe0nr5vxq].[:Measure Names]</field>
+            <field>[federated.19mzx3f1uvu6yj130xfbe0nr5vxq].[none:District:nk]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{AD29E5BC-FC45-4079-BCFC-C6220260F34A}' />
+    </window>
+    <window class='worksheet' name='Sheet 2'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{6D06D559-177E-4CD9-AD15-4C8BD4DA9C70}' />
+    </window>
+    <window class='worksheet' name='Sheet 3'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{FDBD9897-C59A-47C3-8AAD-A709227A1875}' />
+    </window>
+    <window class='worksheet' name='Sheet 4'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{9C042E42-AFE6-4443-81DC-0379F9C93FC8}' />
+    </window>
+  </windows>
+  <thumbnails>
+    <thumbnail height='192' name='PERFORMING DISTRICTS' width='192'>
+      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
+      rkJggg==
+    </thumbnail>
+  </thumbnails>
+</workbook>
