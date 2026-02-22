@@ -67,7 +67,7 @@ Maize shows slight negative skew (most sub counties have relatively high yields)
 
 * Key Insight: Productivity depends more on inputs (rainfall, soil quality, farming practices) than land size
  
-<img width="693" height="616" alt="image" src="https://github.com/user-attachments/assets/9f5da58d-1368-4725-bddf-9429f11a754e" />
+<img width="610" height="482" alt="image" src="https://github.com/user-attachments/assets/f1d04129-c803-4d7a-880d-8546257aefb4" />
 
 #### **Conclusion**
 Based on the analysis, here are three concrete recommendations for the NGO; 
