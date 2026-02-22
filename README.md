@@ -55,12 +55,12 @@ To analyze maize and sorghum production in the Karamoja region of Uganda at both
 
 3. Subcounty Distribution: 52 subcounties across 7 districts with varying productivity levels
 
- <img width="870" height="486" alt="image" src="https://github.com/user-attachments/assets/22ad31bb-4e7b-4fd5-971c-41367798ec90" />
- 
+ <img width="661" height="403" alt="image" src="https://github.com/user-attachments/assets/68db1078-0b52-438d-9563-5788a2834d57" />
+
 #### **Yield Characteristics**
 Maize shows slight negative skew (most sub counties have relatively high yields); Sorghum shows slight positive skew (some very high productivity areas). 
 
-<img width="845" height="438" alt="image" src="https://github.com/user-attachments/assets/a44aa471-1784-4475-ada7-e110d8306139" />
+<img width="752" height="396" alt="image" src="https://github.com/user-attachments/assets/2afd1d78-8045-4071-8046-bc9c2ed673a4" />
 
 #### **Land Use Efficiency**
 * Area-Yield Relationship: Weak correlation between cultivation area and yield 
