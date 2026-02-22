@@ -1,5 +1,4 @@
 ### **KARAMOJA CROP PRODUCTION DATA ANALYSIS**
-
 <img width="490" height="200" alt="image" src="https://github.com/user-attachments/assets/df6cff8a-e66e-423d-8bdc-86dc2d4a82a3" />
 
 #### **Overview**
