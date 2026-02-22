@@ -1,6 +1,6 @@
 ### **KARAMOJA CROP PRODUCTION DATA ANALYSIS**
 
-<img width="490" height="250" alt="image" src="https://github.com/user-attachments/assets/df6cff8a-e66e-423d-8bdc-86dc2d4a82a3" />
+<img width="490" height="200" alt="image" src="https://github.com/user-attachments/assets/df6cff8a-e66e-423d-8bdc-86dc2d4a82a3" />
 
 #### **Overview**
 Karamoja is the most food-insecure region of Uganda, primarily due to low crop productivity caused by intense droughts, pest outbreaks, and disease epidemics. Multiple NGOs provide technical support and farm inputs to farmers experiencing extremely low yields. Still, they lack visibility into the region's overall state and often rely on local sources to prioritize their activities.
@@ -55,19 +55,19 @@ To analyse maize and sorghum production in the Karamoja region of Uganda at both
 
 3. Subcounty Distribution: 52 subcounties across 7 districts with varying productivity levels
 
- <img width="652" height="400" alt="image" src="https://github.com/user-attachments/assets/68db1078-0b52-438d-9563-5788a2834d57" />
+ <img width="652" height="350" alt="image" src="https://github.com/user-attachments/assets/68db1078-0b52-438d-9563-5788a2834d57" />
 
 #### **Yield Characteristics**
 Maize shows a slight negative skew (most sub-counties have relatively high yields); Sorghum shows a slight positive skew (some very high productivity areas). 
 
-<img width="767" height="396" alt="image" src="https://github.com/user-attachments/assets/2afd1d78-8045-4071-8046-bc9c2ed673a4" />
+<img width="767" height="350" alt="image" src="https://github.com/user-attachments/assets/2afd1d78-8045-4071-8046-bc9c2ed673a4" />
 
 #### **Land Use Efficiency**
 * Area-Yield Relationship: Weak correlation between cultivation area and yield 
 
 * Key Insight: Productivity depends more on inputs (rainfall, soil quality, farming practices) than land size
  
-<img width="610" height="400" alt="image" src="https://github.com/user-attachments/assets/f1d04129-c803-4d7a-880d-8546257aefb4" />
+<img width="610" height="350" alt="image" src="https://github.com/user-attachments/assets/f1d04129-c803-4d7a-880d-8546257aefb4" />
 
 #### **Conclusion**
 Based on the analysis, here are three concrete recommendations for the NGO; 
