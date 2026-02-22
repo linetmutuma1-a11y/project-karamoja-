@@ -1,5 +1,5 @@
 Karamoja Crop Production Data Analysis
-📌 Project Overview
+Project Overview
 
 This project analyzes maize and sorghum production in the Karamoja region of Uganda at both district and subcounty levels. The analysis explores production patterns, population influence, land use efficiency, and yield distribution using Python data science tools.
 
@@ -16,8 +16,7 @@ Feature engineering
 Data visualization
 
 Exporting processed data
-
-🗂️ Project Structure
+ Project Structure
 DATA/
 │── SHAPEFILES/
 │   ├── Uganda_Districts.shp
@@ -56,7 +55,7 @@ zipfile
 
 os
 
-📦 Data Extraction
+Data Extraction
 
 The dataset is provided in a ZIP file and extracted using:
 
@@ -65,7 +64,7 @@ from zipfile import ZipFile
 
 Files are extracted into the DATA directory for easier access.
 
-🗺️ Shapefile Processing
+Shapefile Processing
 
 Shapefiles are read using a custom function:
 
@@ -94,7 +93,7 @@ subcounty_df = pd.read_csv('Uganda_Karamoja_Subcounty_Crop_Yield_Population.csv'
 
 These contain population, crop area, yield, and production data.
 
-🔍 Data Exploration
+Data Exploration
 
 Initial exploration includes:
 
@@ -115,8 +114,7 @@ District and subcounty counts
 Missing value checks
 
 No missing values were found in the datasets.
-
-🧹 Data Cleaning & Preparation
+Data Cleaning & Preparation
 1. Creating Copies
 
 To preserve original data:
@@ -137,7 +135,7 @@ Example:
 
 District and subcounty names are converted to title case for consistency.
 
-🔗 Data Integration
+Data Integration
 
 The district and subcounty datasets are merged using:
 
@@ -153,7 +151,7 @@ This creates a combined dataset named:
 
 karamoja_df
 
-🧮 Feature Engineering
+Feature Engineering
 
 New analytical features are created:
 
@@ -168,8 +166,7 @@ Area ÷ Population
 
 
 These features help evaluate agricultural performance and land utilization.
-
-📊 Data Analysis & Visualization
+Data Analysis & Visualization
 1. Stacked Bar Chart
 
 Shows maize vs sorghum production by district.
@@ -225,7 +222,7 @@ Crop area has weak correlation with yield.
 
 Productivity depends more on environmental and management factors.
 
-💾 Exporting Results
+Exporting Results
 
 The cleaned dataset is saved for future use:
 
@@ -234,7 +231,7 @@ karamoja_df.to_csv('karamoja_df.csv', index=False)
 
 This file contains merged and engineered features.
 
-▶️ How to Run the Project
+How to Run the Project
 
 Clone or download the repository
 
@@ -248,7 +245,7 @@ Run cells in sequence
 
 View visualizations and exported CSV
 
-📌 Future Improvements
+Future Improvements
 
 Add rainfall and climate data
 
@@ -257,5 +254,3 @@ Perform time-series analysis
 Integrate GIS visualizations
 
 Build predictive models
-
-Create interactive dashboards
