@@ -1,9 +1,9 @@
 ### **KARAMOJA CROP PRODUCTION DATA ANALYSIS**
 
-<img width="490" height="300" alt="image" src="https://github.com/user-attachments/assets/df6cff8a-e66e-423d-8bdc-86dc2d4a82a3" />
+<img width="490" height="250" alt="image" src="https://github.com/user-attachments/assets/df6cff8a-e66e-423d-8bdc-86dc2d4a82a3" />
 
 #### **Overview**
-Karamoja is the most food-insecure region of Uganda, primarily due to low crop productivity caused by intense droughts, pest outbreaks, and disease epidemics. Multiple NGOs provide technical support and farm inputs to farmers experiencing extremely low yields, but they lack visibility into the overall state of the region and often rely on local sources of information to prioritize their activities.
+Karamoja is the most food-insecure region of Uganda, primarily due to low crop productivity caused by intense droughts, pest outbreaks, and disease epidemics. Multiple NGOs provide technical support and farm inputs to farmers experiencing extremely low yields. Still, they lack visibility into the region's overall state and often rely on local sources to prioritize their activities.
 #### **Business Problem**
 Dalberg Data Insights (DDI) has been tasked with developing a food security monitoring tool to support NGO decision-making in Karamoja. This project creates an interactive visualization dashboard using satellite-derived crop yield data for the 2017 season, serving as a mockup for the full Food Security Monitoring tool. 
 #### **Objectives**
