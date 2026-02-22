@@ -72,7 +72,7 @@ Maize shows a slight negative skew (most sub-counties have relatively high yield
 #### **Conclusion**
 Based on the analysis, here are three concrete recommendations for the NGO; 
 
-**Targeted Interventions in Critical Sub-counties**
+1. **Targeted Interventions in Critical Sub-counties**
 
 **Finding**: Several sub-counties show extremely low yields (<150 kg/ha) for both maize and sorghum, indicating critical food security risk. 
 
@@ -86,7 +86,7 @@ Based on the analysis, here are three concrete recommendations for the NGO;
 
 **Expected Impact**: 30-50% yield improvement in targeted sub-counties within 2 seasons 
 
-**District-Level Resource Allocation Based on Production Gaps** 
+2. **District-Level Resource Allocation Based on Production Gaps** 
 
 **Finding**: Kotido district has the highest production but also the highest population, while Moroto shows consistently low production across all metrics. The correlation between area and yield is weak, suggesting productivity factors matter more than land size. 
 
@@ -101,7 +101,7 @@ Based on the analysis, here are three concrete recommendations for the NGO;
 * Focus on productivity-enhancing inputs rather than land expansion
 **Expected Impact**: Balanced regional development with 20% overall production increase 
 
-**Crop-Specific Support Based on Yield Patterns** 
+3. **Crop-Specific Support Based on Yield Patterns** 
 
 **Finding**: Maize yields show negative skew (most subcounties perform relatively well), while sorghum yields show positive skew (some exceptional performers but many underperformers). This suggests different intervention strategies for each crop. 
 
